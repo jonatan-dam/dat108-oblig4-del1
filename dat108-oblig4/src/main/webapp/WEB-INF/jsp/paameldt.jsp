@@ -1,3 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +17,6 @@
         &nbsp;&nbsp;&nbsp;Arnesen<br />
         &nbsp;&nbsp;&nbsp;90123456<br /> &nbsp;&nbsp;&nbsp;mann
     </p>
-    <a href="deltagerliste">Gå til deltagerlisten</a>
+    <a href="deltagerliste.html">Gå til deltagerlisten</a>
 </body>
 </html>
