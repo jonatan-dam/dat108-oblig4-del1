@@ -11,4 +11,14 @@ public class PaameldingController {
 	public String paamelding() {
 		return "paamelding_med_melding";
 	}
+	
+	@GetMapping("/deltagerliste")
+	public String deltagerliste() {
+		return "deltagerliste";
+	}
+	
+	@GetMapping("/paameldt")
+	public String paameldt() {
+		return "paameldt";
+	}
 }

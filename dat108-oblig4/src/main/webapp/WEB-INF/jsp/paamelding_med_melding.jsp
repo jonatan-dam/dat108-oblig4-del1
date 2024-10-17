@@ -7,27 +7,27 @@
 <head>
     <link href="css/simple.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8">
-<!-- <script src="js/myscript.js" defer></script>  -->  
+    <script src="js/klientsidevalidering.js" defer></script> 
     <title>Påmelding</title>
 </head>
 
 <body>
     <h2>Påmelding</h2>
-    <p style="color:red;">Påmeldingsdetaljer er ugyldige</p>
+    <!--<p style="color:red;">Påmeldingsdetaljer er ugyldige</p>-->
     
     <fieldset>
-        <form>
-            <label for="fornavn">Fornavn</label><br>
-            <input type="text" name="fornavn"><br>
-            <label for="etternavn">Etternavn</label><br>
-            <input type="text" name="etternavn"><br>
-            <label for="mobil">Mobil (8 siffer)</label><br>
-            <input type="number" name="mobil"><br>
-            <label for="passord">Passord</label><br>
-            <input type="password" name="passord"><br>
-            <label for="passordRepetert">Passord repetert</label><br>
-            <input type="password" name="passordRepetert"><br>
-            <label for="kjonn">Kjønn</label><br>
+        <form id="skjema">
+            <label for="fornavn">Fornavn</label>
+            <input type="text" name="fornavn" id="fornavn"><br>
+            <label for="etternavn">Etternavn</label>
+            <input type="text" name="etternavn" id="etternavn"><br>
+            <label for="mobil">Mobil (8 siffer)</label>
+            <input type="text" name="mobil" id="mobil"><br>
+            <label for="passord">Passord</label>
+            <input type="password" name="passord" id="passord"><br>
+            <label for="passordRepetert">Passord repetert</label>
+            <input type="password" name="passordRepetert" id="passordRepetert"><br>
+            <label for="kjonn">Kjønn</label>
             <input type="radio" name="kjonn" value="mann">Mann
             <input type="radio" name="kjonn" value="kvinne">Kvinne<br>
             <input type="submit" value="Meld meg på">
