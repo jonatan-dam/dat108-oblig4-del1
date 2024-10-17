@@ -7,16 +7,21 @@
 <head>
     <link href="css/simple.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8">
-    <script src="js/klientsidevalidering.js" defer></script> 
+   <script src="js/klientsidevalidering.js" defer></script>
     <title>Påmelding</title>
 </head>
 
 <body>
     <h2>Påmelding</h2>
-    <!--<p style="color:red;">Påmeldingsdetaljer er ugyldige</p>-->
+    <p style="color:red;">
+            <c:forEach var="feilmelding" items="${SAfeilmeldinger}">
+                ${feilmelding}<br>
+            </c:forEach>
+         </p>
+            
     
     <fieldset>
-        <form id="skjema">
+        <form id="skjema" action="sjekkDeltager" method="post">
             <label for="fornavn">Fornavn</label>
             <input type="text" name="fornavn" id="fornavn"><br>
             <label for="etternavn">Etternavn</label>

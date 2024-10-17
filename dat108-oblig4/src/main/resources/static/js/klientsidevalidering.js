@@ -75,7 +75,7 @@ function validateMobil(mobil){
 function validatePassord(passord){
     let valid = true;
     
-    if(/^(?=.*[0-9])(?=.*[\W_])[A-Za-z0-9\\W_]{7,}$/.test(passord.value)){
+    if(/?=.*[0-9])(?=.*[\\W_])[A-Za-z0-9\\W_]{7,}$$/.test(passord.value)){
         passord.setCustomValidity("Passord må ha en minimumslengde på 7. Man må også ha minst 1 tall og minst 1 spesialtegn.")
         valid = false;
     } else {
@@ -144,16 +144,18 @@ kjonnInputs.forEach(input => {
 
 // Setter eventlistener til å sjekke gyldighet av brukerinput når skjemaet forsøker å sende inn
 document.getElementById("skjema").addEventListener("submit", function(event) {
-    event.preventDefault();
     
-    let valid = true;
 
-    // Validerer alle input-felter uten radioknappene for kjønn
+    let valid = true;
+    event.preventDefault();
+
+    // Validerer alle input-felter utenom radioknappene for kjønn
     inputs.forEach(input => {
         const gyldigFelt = validateFelt(input);
         if (gyldigFelt === false) {
             valid = false;
             input.reportValidity(); // Viser feilmelding for første ugyldige felt
+          
         }
     });
     
@@ -164,7 +166,7 @@ document.getElementById("skjema").addEventListener("submit", function(event) {
     }
 
     if (valid) {
-        console.log("gyldig, sendes");
+        this.submit();
     } else {
         console.log("ugyldig, sendes ikke");
     }
