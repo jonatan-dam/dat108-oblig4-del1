@@ -11,7 +11,9 @@ function validateFelt(felt) {
             validateMobil(felt);
             break;
         case "passord":
-            validatePassord(felt);
+            let passordValid = validatePassord(felt);
+            let passordRepetertValid = validatePassordRepetert(document.getElementById("passordRepetert"), felt); // Validerer repetert passord mot nytt passord
+            return passordValid && passordRepetertValid;
             break;
         case "passordRepetert":
             validatePassordRepetert(felt, document.getElementById("passord"));
@@ -75,7 +77,7 @@ function validateMobil(mobil){
 function validatePassord(passord){
     let valid = true;
     
-    if(/?=.*[0-9])(?=.*[\\W_])[A-Za-z0-9\\W_]{7,}$$/.test(passord.value)){
+    if(/^(?=.*[0-9])(?=.*[\W_])[A-Za-z0-9\W_]{7,}$/.test(passord.value) === false){
         passord.setCustomValidity("Passord må ha en minimumslengde på 7. Man må også ha minst 1 tall og minst 1 spesialtegn.")
         valid = false;
     } else {
@@ -89,7 +91,7 @@ function validatePassord(passord){
 function validatePassordRepetert(passordRepetert, passord){
     let valid = true;
     
-    if(passordRepetert.value != passord.value){
+    if(passordRepetert.value !== passord.value){
         passordRepetert.setCustomValidity("Repetert passord må være identisk med det første passordet");
         valid = false;
     } else {
