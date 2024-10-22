@@ -1,8 +1,10 @@
 package no.hvl.dat108.controller;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import no.hvl.dat108.model.Deltager;
+import no.hvl.dat108.model.Deltagere;
 
 @Controller
 public class PaameldingController {
@@ -22,7 +25,19 @@ public class PaameldingController {
 	}
 	
 	@GetMapping("/deltagerliste")
-	public String deltagerliste() {
+	public String deltagerliste(Model model) {
+		
+		// Legger inn sortering på fornavn først, etterfølgt av sortering på etternavn
+		Comparator<Deltager> comp = Comparator
+				.comparing(Deltager::getFornavn)
+				.thenComparing(Deltager::getEtternavn);
+		
+		List<Deltager> sortertDeltagere = Deltagere.alleDeltagere.stream()
+				.sorted(comp)
+				.toList();
+		
+		model.addAttribute("deltagere", sortertDeltagere);
+		
 		return "deltagerliste";
 	}
 	

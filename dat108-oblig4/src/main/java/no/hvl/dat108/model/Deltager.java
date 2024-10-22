@@ -30,12 +30,22 @@ public class Deltager {
 	private String etternavn;
 	
 	
+	@Pattern(regexp = "^(?i)(mann|kvinne)$", message = "Kjønn må være enten 'mann' eller 'kvinne'")
+	@NotNull(message = "Kjønn er obligatorisk")
 	private String kjonn;
 	
+	public Deltager(String mobil, String passord, String fornavn, String etternavn, String kjonn) {
+		this.mobil = mobil;
+		this.passord= passord;
+		this.fornavn = fornavn;
+		this.etternavn = etternavn;
+		this.kjonn = kjonn;
+		
+	}
 	
 	@Override
 	public String toString() {
-		return "Deltager [mobil=" + mobil + ", passord=" + passord + ", fornavn=" + fornavn + ", etternavn=" + etternavn
+		return "Deltager [mobil=" + mobil + ", fornavn=" + fornavn + ", etternavn=" + etternavn
 				+ ", kjonn=" + kjonn + "]";
 	}
 	
@@ -47,12 +57,7 @@ public class Deltager {
 	public void setMobil(String mobil) {
 		this.mobil = mobil;
 	}
-	public String getPassord() {
-		return passord;
-	}
-	public void setPassord(String passord) {
-		this.passord = passord;
-	}
+	
 	public String getFornavn() {
 		return fornavn;
 	}
