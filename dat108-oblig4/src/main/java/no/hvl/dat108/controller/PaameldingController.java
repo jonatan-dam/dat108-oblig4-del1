@@ -58,6 +58,7 @@ public class PaameldingController {
 			return "redirect:paamelding";
 		}
 		
+		Deltagere.alleDeltagere.add(deltager);
 		session.setAttribute("SAdeltager", deltager);
 		
 		return "redirect:kvittering";
