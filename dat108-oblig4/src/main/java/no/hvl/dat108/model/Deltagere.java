@@ -5,13 +5,13 @@ import java.util.List;
 public class Deltagere {
 
 	public static List<Deltager> alleDeltagere = List.of(
-			new Deltager("12345678", "passord", "Per", "Viskeler", "mann"),
-			new Deltager("18273892", "passord", "Anders", "Hansen", "mann"),
-			new Deltager("10293892", "passord", "Kari", "Nordmann", "kvinne"),
-			new Deltager("19283920", "passord", "Ole", "Berg", "mann"),
-			new Deltager("10384892", "passord", "Ola", "Nordmann", "mann"),
-			new Deltager("10293892", "passord", "Anne", "Viskeler", "kvinne"),
-			new Deltager("19382128", "passord", "Mari", "Berg", "kvinne"),
-			new Deltager("10293920", "passord", "Karsten", "Warholm", "mann")
+			new Deltager("12345678", "passord1!", "Per", "Viskeler", "mann"),
+			new Deltager("18273892", "passord1!", "Anders", "Hansen", "mann"),
+			new Deltager("10293892", "passord1!", "Kari", "Nordmann", "kvinne"),
+			new Deltager("19283920", "passord1!", "Ole", "Berg", "mann"),
+			new Deltager("10384892", "passord1!", "Ola", "Nordmann", "mann"),
+			new Deltager("10293892", "passord1!", "Anne", "Viskeler", "kvinne"),
+			new Deltager("19382128", "passord1!", "Mari", "Berg", "kvinne"),
+			new Deltager("10293920", "passord1!", "Karsten", "Warholm", "mann")
 			);
 }
